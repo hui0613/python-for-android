@@ -526,6 +526,7 @@ class Recipe(metaclass=RecipeMeta):
         if arch is None:
             arch = self.filtered_archs[0]
         env = arch.get_env(with_flags_in_cc=with_flags_in_cc)
+        
         return env
 
     def prebuild_arch(self, arch):

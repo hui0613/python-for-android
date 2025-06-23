@@ -224,7 +224,6 @@ class Python3Recipe(TargetPythonRecipe):
         else:
             warning('lld not found, linking without it. '
                     'Consider installing lld if linker errors occur.')
-
         return env
 
     def set_libs_flags(self, env, arch):

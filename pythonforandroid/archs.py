@@ -153,6 +153,9 @@ class Arch:
                 ctx_libs_dir=self.ctx.get_libs_dir(self.arch)
             )
         )
+        if self.arch == "arm64-v8a":
+            env['LDFLAGS'] += ' -Wl,-z,max-page-size=16384'
+            env['LDFLAGS'] += ' -Wl,-z,common-page-size=16384'
 
         # LDLIBS: Library flags or names given to compilers when they are
         # supposed to invoke the linker.
